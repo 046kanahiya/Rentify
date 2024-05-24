@@ -11,7 +11,7 @@ function Login() {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
-            const res = await axios.post('http://localhost:5000/api/user/login', {
+            const res = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/api/user/login`, {
                 email,
                 password,
             });

@@ -15,7 +15,7 @@ function Navbar() {
     const fetchUserData =async()=>{
         console.log("sdgdr");
         try {
-            const response = await axios.get('http://localhost:5000/api/user/logged-user', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/api/user/logged-user`, {
                 headers: {
                     'Content-Type': 'application/json',
                     "authorization":`Bearer ${token}`

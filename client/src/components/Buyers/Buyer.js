@@ -11,7 +11,7 @@ function Buyer() {
     const SubmitUserDetails = async(sellermail)=>{
         // console.log("sdgdr");
         try {
-            const response = await axios.post('http://localhost:5000/api/buyer/mail-to-seller',{buyeremail:email,selleremail:sellermail}, {
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/api/buyer/mail-to-seller`,{buyeremail:email,selleremail:sellermail}, {
                 headers: {
                     'Content-Type': 'application/json',
                     "authorization":`Bearer ${token}`
@@ -35,7 +35,7 @@ function Buyer() {
         // console.log("sdgdr");
         try {
             console.log("dfhgd",email);
-            const response = await axios.get('http://localhost:5000/api/buyer/getAll-tolet', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/api/buyer/getAll-tolet`, {
                 headers: {
                     'Content-Type': 'application/json',
                     "authorization":`Bearer ${token}`
@@ -57,7 +57,7 @@ function Buyer() {
 
         try {
 
-            const res = await axios.get('http://localhost:5000/api/user/logged-user', {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/api/user/logged-user`, {
                 headers: {
                     'Content-Type': 'application/json',
                     "authorization":`Bearer ${token}`

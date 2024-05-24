@@ -31,7 +31,7 @@ function RentPost() {
         e.preventDefault();
         console.log(formData);
         try {
-            const response = await axios.post('http://localhost:5000/api/seller/add-tolet', formData, {
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/api/seller/add-tolet`, formData, {
                 headers: {
                     'Content-Type': 'application/json',
                     "authorization": `Bearer ${token}`

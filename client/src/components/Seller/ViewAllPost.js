@@ -12,7 +12,7 @@ function ViewAllPost() {
         // console.log("sdgdr");
         try {
             console.log("dfhgd",email);
-            const response = await axios.get('http://localhost:5000/api/seller/seller-tolets', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/api/seller/seller-tolets`, {
                 headers: {
                     'Content-Type': 'application/json',
                     "authorization":`Bearer ${token}`
@@ -34,7 +34,7 @@ function ViewAllPost() {
 
         try {
 
-            const res = await axios.get('http://localhost:5000/api/user/logged-user', {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/api/user/logged-user`, {
                 headers: {
                     'Content-Type': 'application/json',
                     "authorization":`Bearer ${token}`
